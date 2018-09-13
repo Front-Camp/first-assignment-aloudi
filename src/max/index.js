@@ -9,7 +9,7 @@
 const max = arr => {
   let maxValue;
   for (let i = 0; i < arr.lenght; i++) {
-    if ((maxValue < arr[i]) && Number.isFinite( Number(arr[i]) )) {
+    if ((maxValue < arr[i]) && Number.isFinite( arr[i] )) {
       maxValue = arr[i];
     }
   }
