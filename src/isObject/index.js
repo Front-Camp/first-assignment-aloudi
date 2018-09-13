@@ -5,9 +5,15 @@
  * @example
  * isObject({});   // true
  * isObject([]);   // false
- * isObject(null); // false
+ * isObject(null); // false typeof data === 'object' && typeof data.constructor === Object
+ * Object.prototype.toString.call(data) === "object Object"
  */
 const isObject = data => {
+  if (data !== null && Object.prototype.toString.call(data) === "[object Object]"){
+    return true;
+  } else {
+    return false;
+  };
   /* your logic here...*/
 };
 

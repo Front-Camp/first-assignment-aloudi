@@ -8,6 +8,13 @@
  * @return {string} truncated string
  */
 const truncate = (str, length = 0, replacer = '...') => {
+  if (length < str.length){
+    return str;
+  } else if(str){
+    return str + replacer;
+  } else {
+    return str;
+  }
   /* your logic here...*/
 };
 

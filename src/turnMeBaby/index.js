@@ -8,7 +8,15 @@
  * turnMeBaby('Some text'); // 'txet emoS'
  */
 const turnMeBaby = str => {
-  /* your logic here...*/
+  let modifiedStr = "";
+  if (typeof str !== "string") {
+    throw "Input is not a string";
+  } else {
+    for (let i = 1; i <= str.length; i++) {
+      modifiedStr += str[(str.length - i)]
+    }
+    return modifiedStr;
+  }
 };
 
 export default turnMeBaby;
