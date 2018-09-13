@@ -7,13 +7,17 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  let maxValue;
-  for (let i = 0; i < arr.lenght; i++) {
-    if ((maxValue < arr[i]) && Number.isFinite( Number(arr[i]) )) {
-      maxValue = arr[i];
+  let filterdArr = arr.filter((a) => {
+    if (Number(a) && isFinite(a)) { return a; }
+  });
+
+  let result = filterdArr[0];
+  for (let i = 0; i < filterdArr.length; i++) {
+    if( result < filterdArr[i] ){
+    	result = filterdArr[i];
     }
   }
-  return maxValue;
-};
+  return result;
+}
 
 export default max;

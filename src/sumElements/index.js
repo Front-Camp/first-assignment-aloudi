@@ -11,13 +11,11 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  let result = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let temp = Number(arr[i]);
-    if (Number.isFinite(temp)) {
-      result += arr[i];
-    }
-  }
+  let filteredArr = arr.filter((a) => {
+    if (Number(a) && isFinite(a)) { return a; }
+  });
+
+  let result = filteredArr.reduce((a, b) => a + b, 0);
   return result;
 };
 
